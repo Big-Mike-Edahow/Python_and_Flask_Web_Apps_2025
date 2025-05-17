@@ -1,0 +1,21 @@
+<!-- create.html -->
+
+{% extends "base.html" %}
+{% block title %} Create {% endblock %}
+
+{% block content %}
+
+<h1 class="headline-h1">Create a new post!</h1>
+<br>
+<form method="post">
+    <label for="author">Author</label>
+    <input name="author" id="author" value="{{ request.form['author'] }}" required>
+    <label for="title">Title</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}" required>
+    <label for="content">Content</label>
+    <textarea name="content" id="content">{{ request.form['content'] }}</textarea>
+    <input type="submit" value="Save">
+</form>
+
+{% endblock %}
+

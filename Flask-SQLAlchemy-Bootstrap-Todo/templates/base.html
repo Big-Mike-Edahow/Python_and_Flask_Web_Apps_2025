@@ -1,0 +1,78 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>{% block title %} {% endblock title %}</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Todo List 📝</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/about">About 🛈</a> <!-- Link to About page -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    <footer class="bg-dark text-white text-center text-lg-start mt-5 py-4">
+        <section class="container p-4 pb-0">
+            <div class="mb-4">
+                <a href="https://www.facebook.com/big.mike.hoorah/" class="btn btn-social-icon m-2"
+                    style="background-color: #3b5998;" role="button" target="_blank">
+                    <i class="fab fa-facebook-f fa-2x"></i>
+                </a>
+                <a href="https://x.com/time_space_warp" class="btn btn-social-icon m-2"
+                    style="background-color: #55acee;" role="button" target="_blank">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+                <a href="https://www.google.com/" class="btn btn-social-icon m-2" style="background-color: #dd4b39;"
+                    role="button" target="_blank">
+                    <i class="fab fa-google fa-2x"></i>
+                </a>
+                <a href="https://www.instagram.com/big.mike.hoorah" class="btn btn-social-icon m-2"
+                    style="background-color: #ac2bac;" role="button" target="_blank">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mike-jackson-119643105/" class="btn btn-social-icon m-2"
+                    style="background-color: #0082ca;" role="button" target="_blank">
+                    <i class="fab fa-linkedin-in fa-2x"></i>
+                </a>
+                <a href="https://github.com/Big-Mike-Edahow" class="btn btn-social-icon m-2"
+                    style="background-color: #333333;" role="button" target="_blank">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+        </section>
+
+        <div class="text-center p-3">
+            <strong>&copy; 2025 Mike Jackson</strong> All rights reserved. &reg;
+        </div>
+    </footer>
+    <!-- Bootstrap JS for interactive elements -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+

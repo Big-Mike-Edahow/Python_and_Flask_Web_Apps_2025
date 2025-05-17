@@ -1,0 +1,28 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<h1 class="headline-h1">Posts</h1>
+<br>
+{% for post in posts %}
+<article class="post">
+    <header>
+        <div>
+            <h1>{{ post[2] }}</h1>
+            <h2>Author: {{ post[1] }}</h2>
+            <div class="about">Created on {{ post[4] }}</div>
+        </div>
+        <a class="action" href="{{ url_for('edit', id=post[0]) }}">Edit</a>
+    </header>
+    <p class="body">{{ post[3] }}</p>
+</article>
+{% if not loop.last %}
+<br><hr><br>
+{% endif %}
+{% endfor %}
+
+{% endblock %}
+

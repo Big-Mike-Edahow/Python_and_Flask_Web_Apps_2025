@@ -1,0 +1,73 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+
+<section class="container my-4">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert alert-danger">
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <h2>Add a New Todo</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Todo Title</label>
+            <input class="form-control" type="text"  name="title" id="title" placeholder="Enter todo title" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="content">Todo Content</label>
+            <textarea class="form-control" name="content" id="content" rows="3" placeholder="Enter todo content"
+                required></textarea>
+        </div>
+        <input class="btn btn-outline-dark" type="submit" value="Submit">
+    </form>
+</section>
+<section class="container my-4">
+    <h2>Your Todos</h2>
+    <!-- Display message if no todos are found -->
+    {% if todos | length == 0 %}
+    <div class="alert alert-dark" role="alert">
+        No Todos found. Add your first todo now.
+    </div>
+    {% else %}
+    <!-- Display Todo Table -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for todo in todos %}
+            <tr>
+                <td>{{ todo.id }}</td>
+                <td>{{ todo.title }}</td>
+                <td>{{ todo.content }}</td>
+                <td>{{ todo.created }}</td>
+                <td>
+                    <a href="/edit/{{ todo.id }}" class="btn btn-outline-dark btn-sm">Edit</a>
+                    <a href="/delete/{{ todo.id }}" class="btn btn-outline-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</section>
+
+{% endblock %}
+

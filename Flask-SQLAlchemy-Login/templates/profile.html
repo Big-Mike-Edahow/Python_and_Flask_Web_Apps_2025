@@ -1,0 +1,22 @@
+<!-- profile.html -->
+
+{% extends "base.html" %}
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="notification is-danger">
+    {{ messages[0] }}
+</div>
+{% endif %}
+{% endwith %}
+
+<h1 class="title">Welcome, {{ username }}! 👋</h1>
+<br>
+<h2 class="subtitle">Your account was created on:</h2>
+<h2>{{ created }}</h2>
+
+{% endblock %}
+

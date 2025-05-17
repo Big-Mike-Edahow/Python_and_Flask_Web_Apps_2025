@@ -1,0 +1,26 @@
+<!-- login.html -->
+
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+<h1>Please enter your login credentials</h1>
+<br><br>
+<form action="/login" method=post>
+    <p>
+        <label for="username">Username: </label>
+        <input type="text" name="username" placeholder="Enter your username" required>
+    </p>
+    <p>
+        <label for="password">Password: </label>
+        <input type="password" name="password" placeholder="Enter your password" required>
+    </p>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
+

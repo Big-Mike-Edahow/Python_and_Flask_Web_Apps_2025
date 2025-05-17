@@ -1,0 +1,25 @@
+<!-- edit.html -->
+
+{% extends "base.html" %}
+{% block title %} Edit {% endblock title %}
+
+{% block content %}
+
+<section class="container my-4">
+    <h2>Edit Todo</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label" for="title">Todo Title :</label>
+            <input class="form-control" type="text" name="title" id="title" value="{{ todo.title }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="content">Todo Content: </label>
+            <textarea class="form-control" name="content" id="content" rows="3" required>{{ todo.content }}</textarea>
+        </div>
+        <input class="btn btn-outline-dark" type="submit" value="Submit">
+        <a class="btn btn-outline-secondary" href="{{ url_for('index') }}">Cancel</a>
+    </form>
+</section>
+
+{% endblock %}
+

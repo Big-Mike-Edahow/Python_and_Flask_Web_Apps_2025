@@ -1,0 +1,17 @@
+
+<!-- profile.html -->
+
+{% extends "base.html" %}
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+
+<figure>
+    <img src="../static/images/Computer.png" alt="Computer" width="320px" height="200px">
+    <figcaption>Welcome to your profile. 👤</figcaption>
+</figure>
+<br>
+<h1>Hi, {{ current_user.username }}! 🖐</h1>
+<h2>Your user_id is: {{ current_user.id }}</h2>
+
+{% endblock %}

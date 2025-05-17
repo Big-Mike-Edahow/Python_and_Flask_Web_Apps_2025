@@ -1,0 +1,19 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<section class="content">
+    <h1 class="headline-h1">Messages ✉️</h1>
+    {% for message in messages %}
+    <div class='message'>
+        <h3>{{ message['title'] }}</h3>
+        <p>{{ message['content'] }}</p>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}
+
