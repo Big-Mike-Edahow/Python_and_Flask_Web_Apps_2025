@@ -1,0 +1,39 @@
+<!-- login.html -->
+
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+{% with msg = get_flashed_messages() %}
+{% if msg %}
+{% for message in msg %}
+<h3 class="alert"><strong>{{ message }}</strong></h3>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<br>
+
+<section class="center">
+    <h1 class="headline-h1">Login</h1>
+    <br>
+</section>
+<section class="form-container">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }} {{ form.username() }}
+        </p>
+        <p>
+            {{ form.password.label }} {{ form.password() }}
+        </p>
+        <br>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+    <br>
+    <a href="{{ url_for('register') }}">Create an account</a>
+</section>
+
+{% endblock %}

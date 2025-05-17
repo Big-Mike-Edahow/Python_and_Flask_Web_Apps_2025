@@ -1,0 +1,26 @@
+<!-- login.html -->
+
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+<section class="container">
+    {% if msg %}
+    <div class="message">{{ msg }}</div>
+    {% endif %}
+    <h1>Login</h1>
+    <form action="{{ url_for('login') }}" method="post">
+        <input class="textbox" type="text" name="username" placeholder="Enter Username" required>
+        <input class="textbox" type="password" name="password" placeholder="Enter Password" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <p>Don't have an account?</p>
+    <a class="button" href="{{ url_for('register') }}">Register here</a>
+    </div>
+</section>
+
+{% endblock %}
+

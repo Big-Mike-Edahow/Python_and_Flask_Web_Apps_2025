@@ -1,0 +1,33 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<div class="ui container">
+    <h1 class="ui center aligned header">Todo List! 📝</h1>
+    <form class="ui form" action="/add" method="post">
+        <div class="field">
+            <label>Todo Title</label>
+            <input type="text" name="title" placeholder="Enter Todo..."><br>
+        </div>
+        <button class="ui blue button" type="submit">Add</button>
+    </form>
+    <br><hr>
+    {% for todo in todos %}
+    <div class="ui segment">
+        <p><span class="ui big header">{{ todo.id }} | {{ todo.title }} | Created: {{ todo.created }}
+        {% if todo.complete == False %}
+        <span class="ui gray label">Not Complete</span>
+        {% else %}
+        <span class="ui green label">Completed</span>
+        {% endif %}
+        <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
+        <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a></span>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+

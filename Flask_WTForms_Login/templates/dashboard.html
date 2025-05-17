@@ -1,0 +1,27 @@
+<!-- dashboard.html -->
+
+{% extends "base.html" %}
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+
+{% with msg = get_flashed_messages() %}
+{% if msg %}
+{% for message in msg %}
+<h3 class="alert"><strong>{{ message }}</strong></h3>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<br>
+
+<section class="center">
+<h1 class="headline-h1">Welcome to the Dashboard, {{ username }}! 👋</h1>
+<br>
+<figure>
+    <img src="../static/images/Profile_Pic.png" alt="Profile" width="300px">
+</figure>
+<br>
+<h2><a href="{{ url_for('logout') }}">Logout</a></h2>
+</section>
+
+{% endblock %}

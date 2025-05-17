@@ -1,0 +1,18 @@
+<!-- profile.html -->
+
+{% extends "base.html" %}
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <figure>
+        <img src="../static/images/Programmer.png" alt="Computer Programmer" width="320px" height="200px">
+        <figcaption>Welcome to your profile. 👤</figcaption>
+    </figure>
+    <br>
+    <h1>Hi, {{ session['username'] }}! 🖐</h1>
+</section>
+
+{% endblock %}
+

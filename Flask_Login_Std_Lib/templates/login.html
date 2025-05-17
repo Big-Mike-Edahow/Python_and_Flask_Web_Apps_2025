@@ -1,0 +1,29 @@
+<!-- login.html -->
+
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Login</h1>
+    <br><br>
+    </section>
+    <form class="center" action="/login" method="post">
+        <p>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </p>
+        <br>
+        <p>
+            <input type="submit" value="submit">
+        </p>
+    </form>
+</section>
+
+{% endblock %}
+
