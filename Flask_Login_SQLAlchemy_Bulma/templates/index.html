@@ -1,0 +1,24 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<h1 class="title">Flask Login Example</h1>
+<div class="box">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+    {% else %}
+    <h1 style="font-size: 1.7em; font-weight: 600;">Built with Python</h1>
+    <h2 style="font-size: 1.7em; font-weight: 600;">HTML and CSS</h2>
+    {% endif %}
+    {% endwith %}
+    <h2 class="subtitle">Easy authentication and authorization in Flask.</h2>
+</div>
+
+{% endblock %}
+

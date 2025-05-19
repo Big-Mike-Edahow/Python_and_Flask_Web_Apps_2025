@@ -1,0 +1,27 @@
+<!-- profile.html -->
+
+{% extends "base.html" %}
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+
+<figure>
+    <img src="../static/images/Computer_Programmer.jpg" alt="Hacker" width="200px">
+</figure>
+<h1 class="title">
+    Welcome, {{ current_user.username }}!
+</h1>
+<div class="box">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+    {% endif %}
+    {% endwith %}
+    <h2>User ID: {{ current_user.id }}</h2>
+    <h4>Account created: {{ current_user.created }}</h4>
+</div>
+
+{% endblock %}
+
