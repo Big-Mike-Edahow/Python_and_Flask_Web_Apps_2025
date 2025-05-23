@@ -1,0 +1,23 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<h1>Generative Art! 🖌️</h1>
+
+<div id="image-update-div">
+    <div class="image-frame">
+        <img id="new-image" alt="Image could not be found." src="data:image/png;base64,{{image}}" />
+    </div>
+
+    <div class="button-row">
+        <a download="art.png" href="data:image/png;base64,{{image}}">
+            <button class="btn btn-primary">Download</button></a>
+        <a href="/">
+            <button class="btn btn-primary">Make Another</button></a>
+    </div>
+</div>
+
+{% endblock %}
