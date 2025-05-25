@@ -1,0 +1,32 @@
+<!-- edit.html -->
+
+{% extends 'base.html' %}
+{% block title %} Edit {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Edit Post ✏️</h1>
+    <br><br>
+    <form action="/edit/{{ post.id }}" method="POST">
+        <p>
+            <label for="Title">Title: </label>
+            <input type="text" name="title" value="{{ post.title }}" required>
+        </p>
+        <p>
+            <label for="blog_content">Content: </label>
+            <textarea name="content" rows="5" cols="40" required>{{ post.content }}</textarea>
+        </p>
+        <br>
+        <p>
+            <input type="submit" value="Update Post">
+        </p>
+    </form>
+    <aside>
+        <p>Go back to homepage? </p>
+        <br>
+        <a class="button" href="{{ url_for('index') }}">🔙 Home</a>
+    </aside>
+</section>
+
+{% endblock %}

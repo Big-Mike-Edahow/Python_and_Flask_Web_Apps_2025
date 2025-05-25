@@ -1,0 +1,19 @@
+<!-- about.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">About Flaskblog! 🌐</h1>
+    <br><br>
+</section>
+<section class="grid-container">
+    <figure>
+        <img src="{{ url_for('static', filename='images/Big_Mike.jpg') }}" alt="Big Mike" width="450px">
+        <figcaption>Big Mike. 😎</figcaption>
+    </figure>
+</section>
+
+{% endblock %}
+

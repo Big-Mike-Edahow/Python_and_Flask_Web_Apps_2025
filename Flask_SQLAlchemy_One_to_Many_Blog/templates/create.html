@@ -1,0 +1,32 @@
+<!-- create.html -->
+
+{% extends 'base.html' %}
+{% block title %} Create {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Create new post ✍️</h1>
+    <br><br>
+    <form action="{{url_for('create')}}" method="POST">
+        <p>
+            <label for="author">Author: </label>
+            <input type="text" name="author" required>
+        </p>
+        <p>
+            <label for="Title">Title: </label>
+            <input type="text" name="title" required>
+        </p>
+        <p>
+            <label for="content">Content: </label>
+            <textarea name="content" rows="5" cols="40" required></textarea>
+        </p>
+        <br>
+        <p>
+            <input type="submit" value="Add Post">
+        </p>
+    </form>
+</section>
+
+{% endblock %}
+
