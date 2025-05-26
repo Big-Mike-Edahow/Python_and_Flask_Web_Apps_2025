@@ -9,21 +9,21 @@
     <h1 class="headline-h1">Latest Comments 💬</h1>
     <br><br>
 </section>
-<section class="content">
-    <div class="content">
-        {% for comment in comments %}
-        <div class="comment">
-            <h3>On <a href="{{ url_for('view',post_id=comment.post.id) }}">
-                    {{ comment.post.title }}
-                </a>
-            </h3>
-            <br>
-            <p><b>Author: </b>{{ comment.author }}</p>
-            <p><b>Comment: </b>{{ comment.content }}</p>
-<p>Created: <i>{{ comment.created }}</i></p>
-        </div>
-        {% endfor %}
+<section class="comment-container">
+    {% for comment in comments %}
+    <div class="comment">
+        <h3>On <a href="{{ url_for('view',post_id=comment.post.id) }}">
+                {{ comment.post.title }}
+            </a>
+        </h3>
+        <br>
+        <p><b>Author: </b>{{ comment.author }}</p>
+        <p><b>Comment: </b>{{ comment.content }}</p>
+        <p>Created: <i>{{ comment.created }}</i></p>
+        <br>
     </div>
+    {% endfor %}
 </section>
 
 {% endblock %}
+

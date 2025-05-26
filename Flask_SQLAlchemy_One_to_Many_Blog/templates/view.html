@@ -17,9 +17,10 @@
         <p>{{ post.content }}</p>
         <p class="created">Created: {{ post.created }}</p>
         <hr>
-        {% for comment in post.comments %}
-        <div class="comment">
+        <div class="post-comment">
             <h2>Comments</h2>
+            {% for comment in post.comments %}
+
             <p><b>Author: </b>{{ comment.author }}</p>
             <p><b>Comment: </b>{{ comment.content }}</p>
             <p>Created: <i>{{ comment.created }}</i></p>
@@ -31,22 +32,24 @@
             </form>
             <br>
             {% endfor %}
-            <div class="comment-form">
-                <form method="post">
-                    <p>
-                        <label for="author">Author: </label>
-                        <input type="text" name="author" required>
-                    </p>
-                    <p><label for="content">Content: </label>
-                        <textarea name="content" placeholder="Comment" cols="40" rows="2" required></textarea>
-                    </p>
-                    <br>
-                    <p>
-                        <input type="submit" value="Add comment">
-                    </p>
-                </form>
-            </div>
         </div>
+        <div class="comment-form">
+            <form method="post">
+                <p>
+                    <label for="author">Author: </label>
+                    <input type="text" name="author" required>
+                </p>
+                <p><label for="content">Content: </label>
+                    <textarea name="content" placeholder="Comment" cols="40" rows="2" required></textarea>
+                </p>
+                <br>
+                <p>
+                    <input type="submit" value="Add comment">
+                </p>
+            </form>
+        </div>
+    </div>
 </section>
 
 {% endblock %}
+
