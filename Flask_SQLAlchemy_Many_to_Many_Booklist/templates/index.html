@@ -1,0 +1,44 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Latest Books! 📖</h1>
+    <br><br>
+    <table class="center">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Book Title</th>
+                <th colspan="2">Authors</th>
+                <th >Created</th>
+            </tr>
+        </thead>
+        {% if not books %}
+        <div class="text-center">
+            <h3 class="my-5">No Records to Display!</h3>
+        </div>
+        {% else %}
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <th scope="row">{{ book.id }}</th>
+                <td>{{ book.title }}</td>
+                <td colspan="2">
+                    {% for author in book.authors %}
+                    {{ author.name }}
+                    {% endfor %}
+                </td>
+                <td>{{ book.created }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        {% endif %}
+    </table>
+</section>
+
+{% endblock %}
+
