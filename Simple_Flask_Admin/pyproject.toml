@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "simple-flask-admin"
+version = "0.1.0"
+description = ""
+authors = ["Mike Jackson <perigran_falcon@yahoo.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^3.1.1"
+wtforms = "3.1.2"
+flask-wtf = "^1.2.2"
+flask-sqlalchemy = "^3.1.1"
+flask-admin = "^1.6.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

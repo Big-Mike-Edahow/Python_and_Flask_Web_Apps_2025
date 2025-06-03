@@ -1,0 +1,21 @@
+<!-- edit.html -->
+
+{% extends "base.html" %}
+{% block title %} Update {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Edit Todo! ✏️</h1>
+    <br><br>
+</section>
+<section class="flex-container">
+    <form action="/edit/{{ todo.id }}" method="POST">
+        <textarea name="content" required>{{ todo.content }}</textarea>
+        <br>
+        <input type="submit" value="Update Todo">
+    </form>
+</section>
+
+{% endblock %}
+

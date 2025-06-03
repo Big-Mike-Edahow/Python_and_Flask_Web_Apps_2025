@@ -1,0 +1,37 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Todo List 📝</h1>
+</section>
+<section class="flex-container">
+    <form action="/" method="POST">
+        <label for="content">Content: </label>
+        <input type="text" name="content" placeholder="Enter Your Todo Here" required>
+        <input type="submit" value="Add todo">
+    </form>
+</section>
+<br>
+<section class="content">
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th colspan="2">Actions</th>
+        </tr>
+        {% for todo in todos %}
+        <tr>
+            <td>{{ todo.content}}</td>
+            <td>{{ todo.created.date() }}</td>
+            <td><a href="/delete/{{todo.id}}" class="hrefs">Delete</a></td>
+            <td><a href="/edit/{{todo.id}}" class="hrefs">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</section>
+
+{% endblock %}
