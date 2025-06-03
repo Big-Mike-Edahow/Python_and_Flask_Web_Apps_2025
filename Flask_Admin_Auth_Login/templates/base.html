@@ -1,0 +1,39 @@
+
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Flask-Admin! 👨‍💼</h1>
+        <a href="{{ url_for('index') }}">Home 🏡</a>
+        {% if current_user.is_anonymous %}
+        <a href="{{ url_for('register') }}">Register </a>
+        <a href="{{ url_for('login') }}">Login ➡️</a>
+        {% else %}
+        <a href="{{ url_for('admin.index') }}">Admin 👨‍💼</a>
+        <a href="{{ url_for('logout') }}">Logout ⬅️</a>
+        {% endif %}
+        <a href="{{ url_for('about') }}">About ❓</a>
+    </nav>
+    <main>
+        {% for message in get_flashed_messages() %}
+        <div class="flash center">{{ message }}</div>
+        {% endfor %}
+        <br>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+</body>
+
+</html>

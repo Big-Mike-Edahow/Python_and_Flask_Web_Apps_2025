@@ -1,0 +1,20 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Flask-Admin! 👨‍💼</h1>
+    <br>
+    <hr><br>
+    <figure>
+        <img src="../static/images/Receptionist.jpg" alt="Welcome to the Office" width="300px">
+    </figure>
+    <br>
+    <h2><a href="{{ url_for('admin.index') }}">Administrator's Home Page 🗄️🗃️🖥️</a></h2>
+</section>
+
+{% endblock %}
+
