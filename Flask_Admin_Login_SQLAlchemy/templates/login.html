@@ -1,0 +1,33 @@
+<!-- login.html -->
+
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1>Please enter your login credentials.</h1>
+    <br>
+</section>
+<section class="auth-container">
+    <form action="/login" method=post>
+        <p>
+            <label for="username">Username: </label>
+            <input type="text" name="username" placeholder="Enter your username" required>
+        </p>
+        <p>
+            <label for="password">Password: </label>
+            <input type="password" name="password" placeholder="Enter your password" required>
+        </p>
+        <br>
+        <p>
+        <input type="submit" value="Submit">
+        </p>
+    </form>
+       <br>
+    <p>Need to register?</p>
+    <a class="button" href="/register">Register here</a>
+</section>
+
+{% endblock %}
+

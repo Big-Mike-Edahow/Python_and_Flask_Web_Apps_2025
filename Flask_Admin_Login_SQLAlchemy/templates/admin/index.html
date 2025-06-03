@@ -1,0 +1,28 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'admin/master.html' %}
+{% block title %}Administrator's Home Page{% endblock %}
+{% block body %}
+
+<main>
+    <div class="text-center">
+        <br>
+        <h2>Hi {{ current_user.username }}! 🫡 Welcome to Flask-Admin 👨‍💼</h2>
+        <br>
+    </div>
+    <div class="text-center">
+        <figure>
+            <img style="border: 2px solid black; box-shadow: 2px 2px 2px black;" src="{{ url_for('static', filename='images/Corporate_HQ.jpg')}}" alt="Corporate HQ"
+                width="320px">
+        </figure>
+        <br>
+        <h3 style="text-shadow: 2px 2px 2px black;"><a href="{{ url_for('index') }}">Return to Home Page 🔙</a></h3>
+    </div>
+</main>
+
+{% endblock %}
+
+</html>

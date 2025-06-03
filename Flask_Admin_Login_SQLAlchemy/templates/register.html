@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %} Register {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1>Please register to create an accout.</h1>
+    <br>
+</section>
+<section class="auth-container">
+    <form action="/register" method="post">
+        <p>
+            <label for="username">Username: </label>
+            <input type="text" name="username" placeholder="Enter Username" required>
+        </p>
+        <p>
+            <label for="password">Password: </label>
+            <input type="password" name="password" placeholder="Enter Password" required>
+        </p>
+        <p>
+            <label for="email">Email: </label>
+            <input type="email" name="email" placeholder="Enter Email" required>
+        </p>
+        <br><br>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+    <br>
+    <p>Already have an account?</p>
+    <a class="button" href="{{ url_for('login') }}">Login here</a>
+</section>
+
+{% endblock %}
+
