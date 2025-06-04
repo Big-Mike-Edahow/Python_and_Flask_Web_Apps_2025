@@ -1,0 +1,43 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Welcome To Flask-Mail! 📬</h1>
+    <br>
+</section>
+
+<section class="grid-container">
+    <figure>
+        <img src="{{ url_for('static', filename='images/Mailbox.png') }}" alt="Sendmail" width="320px">
+    </figure>
+    <div>
+        <h1><strong>Send an email! 📧</strong></h1>
+        <br>
+        <form method="post">
+            <p>
+                <label for="name">Name: </label>
+                <input type="text" name="name" required>
+            </p>
+            <p>
+                <label for="email">Email: </label>
+                <input type="email" name="email" required>
+            </p>
+            <p>
+                <label for="subject">Subject: </label>
+                <input type="text" name="subject" required>
+            </p>
+            <p>
+                <label for="message">Message: </label>
+                <textarea name="message" rows="3" cols="50" required></textarea>
+            </p>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</section>
+
+{% endblock %}

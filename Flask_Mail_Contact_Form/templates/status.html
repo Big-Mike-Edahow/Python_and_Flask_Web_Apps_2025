@@ -1,0 +1,29 @@
+<!-- status.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Details of your message! 📬</h1>
+    <br><br>
+    <table class="center">
+        <tbody>
+            <tr>
+                <td>Name: {{ message.name }}</td>
+            </tr>
+            <tr>
+                <td>Email: {{ message.email }}</td>
+            </tr>
+            <tr>
+                <td>Subject: {{ message.subject }}</td>
+            </tr>
+            <tr>
+                <td>Message: {{ message.message }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+{% endblock %}
