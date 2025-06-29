@@ -1,0 +1,28 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+        <nav>
+        <a href="/"><h1>Flask Enumerated List! 👨‍🎓</h1></a>
+        <a href="/">Home 🏫</a>
+        <a href="/about">About ℹ️</a>
+    </nav>
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+</body>
+
+</html>
+

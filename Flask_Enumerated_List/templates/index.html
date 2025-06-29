@@ -1,0 +1,43 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Flask Enumerated List! 📋</h1>
+    <br><br>
+</section>
+<section class="add-edit-form-container">
+    <form action="/add" method="POST">
+        <label for="name">Student Name:
+            <input id="name" type="text" name="name" placehold="Enter student name" required>
+        </label>
+        <input type="submit" value="Submit">
+    </form>
+</section>
+<br><br>
+<table class="center">
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Student</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</a></td>
+            <td><a class="table-button" href="{{ url_for('edit', index=student[0]) }}">Edit</a></td>
+            <td><a class="table-button" href="{{ url_for('delete', index=student[0]) }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</section>
+
+{% endblock %}
+

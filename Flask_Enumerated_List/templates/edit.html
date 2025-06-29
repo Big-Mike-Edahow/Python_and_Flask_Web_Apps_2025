@@ -1,0 +1,22 @@
+<!-- edit.html -->
+
+{% extends "base.html" %}
+{% block title %} Edit {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Edit</h1>
+    <br><br>
+</section>
+<section class="add-edit-form-container">
+    <form action="" method="POST">
+        <label for="new_name">Student Name:
+            <input id="new_name" type="text" name="new_name" value="{{ current_name}}" required>
+        </label>
+        <input type="submit" value="Submit">
+    </form>
+</section>
+
+{% endblock %}
+
