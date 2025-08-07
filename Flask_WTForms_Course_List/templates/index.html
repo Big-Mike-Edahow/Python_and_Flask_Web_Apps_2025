@@ -1,0 +1,30 @@
+<!-- index.html -->
+
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Courses</h1>
+    <br>
+</section>
+<section class="content">
+    {% for course in course_list %}
+    <article>
+        <h3>Title: {{ course['title'] }}</h3><br>
+        <p id="desc"><b>Description: </b>{{ course['description'] }} </p>
+        <p><b>Price: </b>${{ course['price'] }} </p>
+        <p><b>Level: </b><i>({{ course['level'] }})</i></p>
+        <p>Availability:
+            {% if course['available'] %}
+            Available
+            {% else %}
+            Not Available
+            {% endif %}</p>
+    </article>
+    {% endfor %}
+</section>
+
+{% endblock %}
+
